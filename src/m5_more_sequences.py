@@ -9,7 +9,7 @@ for ITERATING through SEQUENCES, including:
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
          and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -77,7 +77,7 @@ def sum_radii(circles):
       :rtype: int | float
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -88,6 +88,11 @@ def sum_radii(circles):
     #
     #       Instead, use explicit loops, as you have for other problems.
     # -------------------------------------------------------------------------
+
+    total = 0
+    for k in range(len(circles)):
+        total = total + circles[k].radius
+    return total
 
 
 ###############################################################################
@@ -156,6 +161,12 @@ def count_last_n_odds(integers, n):
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    count = 0
+    for k in range(n, len(integers) - 1, -1):
+        if type(integers[k]) == int:
+            if integers[k] % 2 != 0:
+                count = count + 1
+            return count
 
 ###############################################################################
 # Some problems iterate (loop) through PART of the sequence,
