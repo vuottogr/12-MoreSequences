@@ -411,7 +411,7 @@ def rectangles_from_circles(circles):
         corner1 = rg.Point(center.x + radius, center.y + radius)
         corner2 = rg.Point(center.x - radius, center.y - radius)
         seq = seq + [rg.Rectangle(corner1, corner2)]
-        return seq
+    return seq
 
 
 
