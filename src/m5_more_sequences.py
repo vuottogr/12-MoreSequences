@@ -157,17 +157,17 @@ def count_last_n_odds(integers, n):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
     count = 0
-    for k in range(n, len(integers) - 1, -1):
-        if type(integers[k]) == int:
-            if integers[k] % 2 != 0:
-                count = count + 1
-            return count
-
+    for k in range(len(integers) - n, len(integers)):
+        if integers[k] % 2 != 0:
+            count = count + 1
+        else:
+            count = count
+    return count
 ###############################################################################
 # Some problems iterate (loop) through PART of the sequence,
 # stopping when the loop FINDS something of interest
@@ -238,10 +238,20 @@ def index_of_first_negative(numbers):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    number = 0
+    index = []
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            number = number + 1
+            index = index + [k]
+    if number > 0:
+        return index[0]
+    else:
+        return -1
 
 def run_test_contains_an_a():
     """ Tests the   contains_an_a   function. """
@@ -296,7 +306,7 @@ def contains_an_a(s):
       :rtype: bool
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ###########################################################################
@@ -310,6 +320,14 @@ def contains_an_a(s):
     #   No fair using the   count   or   find   string methods.
     # -------------------------------------------------------------------------
 
+    number = 0
+    for k in range(len(s)):
+        if s[k] == 'a':
+            number = number + 1
+    if number > 0:
+        return True
+    else:
+        return False
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
